@@ -11,6 +11,7 @@ def get_movie_link(url):
         if re.search(r'st = mcode&sword' and r'&target=after', link['href']):
             target_url = r'http://movie.naver.com/movie/point/af/list.nhn' + str(link['href'])
             movie_links_list.append(target_url)
+            
     return movie_links_list
 
 # url = "http://movie.naver.com/movie/point/af/list.nhn"
@@ -28,6 +29,7 @@ def genre_list(url):
         for genre in genre:
             genre_list.append(genre.a.get_text())
             # print(genre.a.get_text())
+
     return genre_list
 
 # url = "http://movie.naver.com/movie/point/af/list.nhn"
@@ -48,6 +50,7 @@ def get_user_list(url):
     if len(page_link_list) != 1:
         pop_number = len(page_link_list)-1
         page_link_list.pop(pop_number)
+
     return page_link_list
 
 # url = " http://movie.naver.com/movie/point/af/list.nhn?st=mcode&sword=187322&target=after"
